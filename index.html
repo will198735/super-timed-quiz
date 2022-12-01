@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timed Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="./assets/style.css">
 </head>
+<!-- timer -->
 <body>
+<header class="header">
+    <h4 id="view-h">View Highscore</h4>
+    <div id="timer">00</div>
+    
+</header>
+<main>
     <div class="container ">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
@@ -20,13 +27,24 @@
             </div>
 
         </div>
-        <div class="controls"> 
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
+        <div class="controls">
+            <div>
+                <h1>Welcome to the quiz</h1>
+                <p>Try to anwer the folloing codde-related question whithin the timer
+                    limit. Keep in mind that incorrect anwers will penalize your score time
+                    by !an seconds!.</p>
+                <button id="start-btn" class="start-btn btn">Start</button>
+            </div> 
+            <div>
 
+                <button id="next-btn" class="next-btn btn hide">Go Back</button>
+                <button id="next-btn" class="next-btn btn hide">Clear highscore</button>
+            </div> 
         </div>
+            
 
     </div>
     <script defer src="script.js"></script>
+    </main>
 </body>
 </html>
