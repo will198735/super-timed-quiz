@@ -1,3 +1,4 @@
+var questionEl = document.getElementById('question');
 var timerEl = document.getElementById('timer');
 var timeleft = 10;
 var welcomeDiv = document.getElementById('welcome')
@@ -5,19 +6,47 @@ var startButton = document.getElementById('start-btn')
 var questionContainerElement = document.getElementById('question-container')
 var anwersButton = document.getElementById('answer-buttons')
 var nextClear = document.getElementById('next-clear')
-// anwersButton.addEventListener("click",)
+// trying another way
+
+var choiceOneEL = document.getElementById('btn-1');
+var choiceTwoEL = document.getElementById('btn-2');
+var choiceTreeEL = document.getElementById('btn-3');
+var choiceFourEL = document.getElementById('btn-4');
+ var questionIndex = 0;
+
+ choiceOneEL.addEventListener('click', selectAnswer);
+ choiceTwoEL.addEventListener('click', selectAnswer);
+ choiceTreeEL.addEventListener('click', selectAnswer);
+ choiceFourEL.addEventListener('click', selectAnswer);
+
 startButton.addEventListener('click', startGame)
 
-// // var question = [ {
-// //     text: "question mark",
-// //     choice1: "1.quotes",
-// //     choice2: "2.quotes",
-// //     choice3: "3.quotes",
-// //     choice4: "4.quotes"
 
-// // }
+// question sections
 
-// ]
+var question = [ {
+    question: "Commonly used data types DO NOT include:",
+    answers: [ 
+         "1.quotes",
+         "2.quotes",
+         "3.quotes",
+         "4.quotes"
+   ]
+
+ },
+ {
+    
+        question: "skkslCommonly used data types DO NOT include:",
+        answers: [ 
+             "1.slskskquotes",
+             "2.mkaquotes",
+             "3.asmquotes",
+             "4.sa,mquotes",
+        ]
+
+ }
+
+]
 
 //  button function
 function startGame() {
@@ -27,11 +56,12 @@ function startGame() {
     nextClear.classList.add('hide')
     
     questionContainerElement.classList.remove('hide')
+    setNextQuestion()
   
     setTime();
    
 }
-
+// timer section
 
 function setCounterText() {
     timerEl.textContent = timeleft
@@ -51,9 +81,15 @@ clearInterval(timerInterval);
 
 
 function setNextQuestion() {
-
+    questionIndex++
+    questionEl.textContent = question[questionIndex].text;
+    choiceOneEL.textContent = question[questionIndex].answers[0];
+    choiceTwoEL.textContent = question[questionIndex].answers[1];
+    choiceTreeEL.textContent = question[questionIndex].answers[2];
+    choiceFourEL.textContent = question[questionIndex].answers[3];
 }
 function selectAnswer() {
+    console.log(selectAnswer)
 
 }
 setCounterText();
