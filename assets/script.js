@@ -24,7 +24,7 @@ startButton.addEventListener('click', startGame)
 
 // question sections
 
-var question = [ {
+var questionVar = [ {
     question: "Commonly used data types DO NOT include:",
     answers: [ 
          "1.quotes",
@@ -82,14 +82,15 @@ clearInterval(timerInterval);
 
 function setNextQuestion() {
     questionIndex++
-    questionEl.textContent = question[questionIndex].text;
-    choiceOneEL.textContent = question[questionIndex].answers[0];
-    choiceTwoEL.textContent = question[questionIndex].answers[1];
-    choiceTreeEL.textContent = question[questionIndex].answers[2];
-    choiceFourEL.textContent = question[questionIndex].answers[3];
+    questionEl.textContent = questionVar[questionIndex].text;
+    choiceOneEL.textContent = questionVar[questionIndex].answers[0];
+    choiceTwoEL.textContent = questionVar[questionIndex].answers[1];
+    choiceTreeEL.textContent = questionVar[questionIndex].answers[2];
+    choiceFourEL.textContent = questionVar[questionIndex].answers[3];
 }
-function selectAnswer() {
-    console.log(selectAnswer)
+function selectAnswer(event) {
+    event.preventDefault();
+    console.log(event)
 
 }
 setCounterText();
