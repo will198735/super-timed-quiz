@@ -6,7 +6,7 @@ This is a timed quiz program that store highscore.
 it allow user to  gauge their progress compared to the peers
 
 ## Installation
-
+https://will198735.github.io/super-timed-quiz/
 
 ## Usage 
 
